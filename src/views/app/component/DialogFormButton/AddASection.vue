@@ -76,7 +76,7 @@
 
 
 
-                axios.post('http://localhost:5000/api/admin/section', formData,
+                axios.post('https://creatixa-student-portal.herokuapp.com/api/admin/section', formData,
                     {
                         
                         headers: {

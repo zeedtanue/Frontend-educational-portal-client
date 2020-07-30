@@ -160,7 +160,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://localhost:5000/api/admin/student/${this.$route.params.id}`)
+        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/student/${this.$route.params.id}`)
             .then((res)=>{
                 self.user=res.data;
                 

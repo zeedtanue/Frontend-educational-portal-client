@@ -34,7 +34,7 @@ export default {
     },
     mounted(){
         const self = this;
-        axios.get('http://localhost:5000/api/admin/notice')
+        axios.get('https://creatixa-student-portal.herokuapp.com/api/admin/notice')
             .then((res)=>{
                 self.notices=res.data.notice;
                 

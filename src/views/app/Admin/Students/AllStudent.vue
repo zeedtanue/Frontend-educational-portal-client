@@ -58,7 +58,7 @@ export default {
     },
     mounted(){
         const self = this;
-        axios.get('http://localhost:5000/api/admin/student')
+        axios.get('https://creatixa-student-portal.herokuapp.com/api/admin/student')
             .then((res)=>{
                 self.students=res.data.user;
                 

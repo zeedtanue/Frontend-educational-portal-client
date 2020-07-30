@@ -75,7 +75,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://localhost:5000/api/admin/book/${this.$route.params.id}`)
+        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/book/${this.$route.params.id}`)
             .then((res)=>{
                 self.book=res.data.book;
                 

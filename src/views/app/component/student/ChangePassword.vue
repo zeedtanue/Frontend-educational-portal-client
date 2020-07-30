@@ -65,7 +65,7 @@ export default {
              let formData = new FormData();
              formData.append('password', this.change.newPassword);
 
-             axios.put('http://localhost:5000/api/student/change-password', formData,
+             axios.put('https://creatixa-student-portal.herokuapp.com/api/student/change-password', formData,
                     {
                         
                         headers: {

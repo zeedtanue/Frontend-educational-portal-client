@@ -97,7 +97,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://localhost:5000/api/admin/teacher/${this.$route.params.id}`)
+        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/teacher/${this.$route.params.id}`)
             .then((res)=>{
                 self.user=res.data;
                 
@@ -109,7 +109,7 @@ export default {
     },
     methods: {
         deleteUser(){
-            axios.delete(`http://localhost:5000/api/admin/teacher/${this.$route.params.id}`)
+            axios.delete(`https://creatixa-student-portal.herokuapp.com/api/admin/teacher/${this.$route.params.id}`)
                 .then(()=>{
                     this.$router.push('/admin/teachers')
                 })

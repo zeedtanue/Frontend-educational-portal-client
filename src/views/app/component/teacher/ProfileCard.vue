@@ -53,7 +53,7 @@ export default {
     mounted(){
         const self = this;
         let token= localStorage.getItem('token');
-        axios.get('http://localhost:5000/api/teacher/profile',{
+        axios.get('https://creatixa-student-portal.herokuapp.com/api/teacher/profile',{
             headers:{
                 'Authorization': token
             }

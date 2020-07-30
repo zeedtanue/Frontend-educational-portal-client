@@ -69,7 +69,7 @@ export default {
     },
     mounted(){
         const self = this;
-        axios.get(`http://localhost:5000/api/admin/section`)
+        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/section`)
             .then((res)=>{
                 for(const item of res.data.section){
                     self.sections.push({value:item.id, sectionName:item.name})
@@ -78,7 +78,7 @@ export default {
             .catch((err)=>{
                 console.log('Error: ',err)
             })
-        axios.get(`http://localhost:5000/api/admin/class`)
+        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/class`)
             .then((res)=>{
                 for(const item of res.data.className ){
                     self.classes.push({value: item.id, className:item.subject})
@@ -95,7 +95,7 @@ export default {
         assignTeacherClass(){
             console.log(`${this.selectedClass.className} is assigned to  ${this.selectedSection.sectionName} section`)
             
-            axios.post(`http://localhost:5000/api/admin/class-to-section/${this.selectedSection.value}/${this.selectedClass.value}`,
+            axios.post(`https://creatixa-student-portal.herokuapp.com/api/admin/class-to-section/${this.selectedSection.value}/${this.selectedClass.value}`,
                 {
                         
                         headers: {

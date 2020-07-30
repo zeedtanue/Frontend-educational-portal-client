@@ -78,7 +78,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://localhost:5000/api/admin/section/${this.$route.params.id}`)
+        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/section/${this.$route.params.id}`)
             .then((res)=>{
                 self.section=res.data;
                 self.classes= res.data.class;

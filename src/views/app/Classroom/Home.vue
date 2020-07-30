@@ -317,7 +317,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://localhost:5000/api/admin/class/${this.$route.params.id}`)
+        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/class/${this.$route.params.id}`)
             .then((res)=>{
                 self.classDetails=res.data.class;
                 console.log(res.data.class)
@@ -338,7 +338,7 @@ export default {
                 formData.append('details', this.resourceData.details);
                 formData.append('resourceFile', this.resourceData.resourceFile);
 
-                axios.post(`http://localhost:5000/api/teacher/class/resource/${this.$route.params.id}`, formData,
+                axios.post(`https://creatixa-student-portal.herokuapp.com/api/teacher/class/resource/${this.$route.params.id}`, formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data',
@@ -365,7 +365,7 @@ export default {
                 formData.append('mark', this.register.mark);
                 formData.append('assignmentFile', this.register.assignmentFile);
 
-                axios.post(`http://localhost:5000/api/teacher/class/task/${this.$route.params.id}`, formData,
+                axios.post(`https://creatixa-student-portal.herokuapp.com/api/teacher/class/task/${this.$route.params.id}`, formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data',

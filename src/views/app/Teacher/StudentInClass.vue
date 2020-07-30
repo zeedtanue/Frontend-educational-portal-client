@@ -36,7 +36,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://localhost:5000/api/teacher/class/${this.$route.params.id}/students`)
+        axios.get(`https://creatixa-student-portal.herokuapp.com/api/teacher/class/${this.$route.params.id}/students`)
             .then((res)=>{
                 for(const item of res.data){
                     self.students.push(item)

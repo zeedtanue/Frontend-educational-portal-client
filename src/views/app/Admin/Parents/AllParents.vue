@@ -59,7 +59,7 @@ export default {
     },
     mounted(){
         const self = this;
-        axios.get('http://localhost:5000/api/admin/parent')
+        axios.get('https://creatixa-student-portal.herokuapp.com/api/admin/parent')
             .then((res)=>{
                 self.parents=res.data.parent;
                 

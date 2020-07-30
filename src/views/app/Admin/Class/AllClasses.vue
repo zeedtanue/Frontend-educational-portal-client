@@ -100,7 +100,7 @@ export default {
     },
     mounted(){
         const self = this;
-        axios.get('http://localhost:5000/api/admin/class')
+        axios.get('https://creatixa-student-portal.herokuapp.com/api/admin/class')
             .then((res)=>{
                 
                 self.classes=res.data.className;
@@ -117,7 +117,7 @@ export default {
                 id.push[section.id]
             }
             
-            axios.delete(`http://localhost:5000/api/admin/notice/${id}`)
+            axios.delete(`https://creatixa-student-portal.herokuapp.com/api/admin/notice/${id}`)
         },
         addstudent(){
             this.$router.push('create-class')

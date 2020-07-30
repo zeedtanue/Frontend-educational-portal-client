@@ -48,7 +48,7 @@ export default {
     },
     mounted(){
       const self = this;
-        axios.get('http://localhost:5000/api/student/books')
+        axios.get('https://creatixa-student-portal.herokuapp.com/api/student/books')
             .then((res)=>{
                 self.books=res.data.book;
                 console.log("book:",res.data.book)
