@@ -73,23 +73,7 @@
         },
         methods: {
             logIn(){
-                let formData=new FormData()
-                formData.append('userid', this.login.userid);
-                formData.append('password', this.login.password);
-                axios.post('https://creatixa-student-portal.herokuapp.com/api/admin/login', formData,
-                    {
-                        
-                        headers: {
-                            'Content-Type': 'multipart/form-data'
-                        }
-                    }
-                    ).then((response)=>{
-                        let token= response.data.token;
-                        localStorage.setItem('token',token);
-                        this.$router.push('admin/home')
-                    }).catch((err)=>{
-                        console.log(err);
-                    });
+                this.$router.push('admin/home')
             }
         },
     }
