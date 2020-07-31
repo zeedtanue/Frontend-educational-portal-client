@@ -11,7 +11,7 @@
                <v-card>
 
                    <v-card-title class="text-center justify-center py-6">
-                       <h2 class="font-weight-bold display-2 basil--text">Log In To The Portal</h2>
+                       <h2 class="font-weight-bold display-2 basil--text">Log In </h2>
                    </v-card-title>
                    
 
