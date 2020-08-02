@@ -134,7 +134,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://164.90.230.104:5000/api/admin/class/get-task/${this.$route.params.id}`)
+        axios.get(`http://46.101.188.213:5000/api/admin/class/get-task/${this.$route.params.id}`)
             .then((res)=>{
                 self.assignment=res.data.task;
                 console.log(self.assignment)
@@ -145,7 +145,7 @@ export default {
             })
         let token= localStorage.getItem('token');
 
-        axios.get(` http://164.90.230.104:5000/api/teacher/class/task/${this.$route.params.id}/submissions`,{
+        axios.get(` http://46.101.188.213:5000/api/teacher/class/task/${this.$route.params.id}/submissions`,{
             headers:{
                 'Authorization': token
             }
@@ -167,7 +167,7 @@ export default {
                 let formData = new FormData();
                 formData.append('submittedFile', this.submittedFile);
                 
-                axios.post(`http://164.90.230.104:5000/api/student/assignments/${this.$route.params.id}`, formData,
+                axios.post(`http://46.101.188.213:5000/api/student/assignments/${this.$route.params.id}`, formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data',

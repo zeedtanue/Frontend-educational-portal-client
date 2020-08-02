@@ -55,7 +55,7 @@ export default {
     mounted() {
         const self = this;
         let token= localStorage.getItem('token');
-        axios.get('http://164.90.230.104:5000/api/student/payment',{
+        axios.get('http://46.101.188.213:5000/api/student/payment',{
             headers:{
                 'Authorization': token
             }

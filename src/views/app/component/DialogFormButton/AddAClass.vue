@@ -61,7 +61,7 @@
                 let formData = new FormData();
                 formData.append('subject', this.register.subject);
 
-                axios.post('http://164.90.230.104:5000/api/admin/class', formData,
+                axios.post('http://46.101.188.213:5000/api/admin/class', formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data'

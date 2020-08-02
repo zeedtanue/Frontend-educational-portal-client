@@ -85,7 +85,7 @@ export default {
     },
     mounted(){
         const self = this;
-        axios.get('http://164.90.230.104:5000/api/admin/notice')
+        axios.get('http://46.101.188.213:5000/api/admin/notice')
             .then((res)=>{
                 self.notices=res.data.notice;
                 
@@ -102,7 +102,7 @@ export default {
                 id.push[notice.id]
             }
             
-            axios.delete(`http://164.90.230.104:5000/api/admin/notice/${id}`)
+            axios.delete(`http://46.101.188.213:5000/api/admin/notice/${id}`)
         },
         addstudent(){
             this.$router.push('Upload-Notice')

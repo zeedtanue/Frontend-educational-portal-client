@@ -76,7 +76,7 @@
                 let formData=new FormData()
                 formData.append('userid', this.login.userid);
                 formData.append('password', this.login.password);
-                axios.post('http://164.90.230.104:5000/api/student/login', formData,
+                axios.post('http://46.101.188.213:5000/api/student/login', formData,
                     {
                         
                         headers: {

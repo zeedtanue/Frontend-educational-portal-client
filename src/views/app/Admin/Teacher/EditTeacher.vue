@@ -91,7 +91,7 @@
 		},
         mounted() {
         const self = this;
-        axios.get(`http://164.90.230.104:5000/api/admin/teacher/${this.$route.params.id}`)
+        axios.get(`http://46.101.188.213:5000/api/admin/teacher/${this.$route.params.id}`)
             .then((res)=>{
                 self.user=res.data;
                 
@@ -131,7 +131,7 @@
 
 
 
-                axios.put(`http://164.90.230.104:5000/api/admin/teacher/${this.$route.params.id}`, formData,
+                axios.put(`http://46.101.188.213:5000/api/admin/teacher/${this.$route.params.id}`, formData,
                     {
                         
                         headers: {

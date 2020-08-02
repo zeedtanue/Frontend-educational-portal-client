@@ -48,7 +48,7 @@ export default {
     },
     mounted(){
       const self = this;
-        axios.get('http://164.90.230.104:5000/api/student/books')
+        axios.get('http://46.101.188.213:5000/api/student/books')
             .then((res)=>{
                 self.books=res.data.book;
                 console.log("book:",res.data.book)

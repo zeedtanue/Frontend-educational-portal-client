@@ -97,7 +97,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://164.90.230.104:5000/api/admin/teacher/${this.$route.params.id}`)
+        axios.get(`http://46.101.188.213:5000/api/admin/teacher/${this.$route.params.id}`)
             .then((res)=>{
                 self.user=res.data;
                 
@@ -109,7 +109,7 @@ export default {
     },
     methods: {
         deleteUser(){
-            axios.delete(`http://164.90.230.104:5000/api/admin/teacher/${this.$route.params.id}`)
+            axios.delete(`http://46.101.188.213:5000/api/admin/teacher/${this.$route.params.id}`)
                 .then(()=>{
                     this.$router.push('/admin/teachers')
                 })

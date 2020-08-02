@@ -125,7 +125,7 @@
                 formData.append('coverImage', this.register.coverImage);
                 formData.append('bookFile', this.register.bookFile);
 
-                axios.post('http://164.90.230.104:5000/api/admin/book', formData,
+                axios.post('http://46.101.188.213:5000/api/admin/book', formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data'

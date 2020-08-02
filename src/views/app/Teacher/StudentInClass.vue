@@ -36,7 +36,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`http://164.90.230.104:5000/api/teacher/class/${this.$route.params.id}/students`)
+        axios.get(`http://46.101.188.213:5000/api/teacher/class/${this.$route.params.id}/students`)
             .then((res)=>{
                 for(const item of res.data){
                     self.students.push(item)

@@ -65,7 +65,7 @@ export default {
              let formData = new FormData();
              formData.append('password', this.change.newPassword);
 
-             axios.put('http://164.90.230.104:5000/api/teacher/change-password', formData,
+             axios.put('http://46.101.188.213:5000/api/teacher/change-password', formData,
                     {
                         
                         headers: {

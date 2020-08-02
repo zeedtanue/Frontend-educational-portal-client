@@ -83,7 +83,7 @@
                 formData.append('cover', this.register.cover);
                 formData.append('name', this.register.name);
 
-                axios.post('http://164.90.230.104:5000/api/admin/notice', formData,
+                axios.post('http://46.101.188.213:5000/api/admin/notice', formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data'
