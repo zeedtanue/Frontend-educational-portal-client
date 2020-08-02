@@ -76,7 +76,7 @@
 
 
 
-                axios.post('https://creatixa-student-portal.herokuapp.com/api/admin/section', formData,
+                axios.post('http://164.90.230.104:5000/api/admin/section', formData,
                     {
                         
                         headers: {

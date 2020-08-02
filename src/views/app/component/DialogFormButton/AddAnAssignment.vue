@@ -125,7 +125,7 @@
                 formData.append('coverImage', this.register.coverImage);
                 formData.append('bookFile', this.register.bookFile);
 
-                axios.post('https://creatixa-student-portal.herokuapp.com/api/admin/book', formData,
+                axios.post('http://164.90.230.104:5000/api/admin/book', formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data'

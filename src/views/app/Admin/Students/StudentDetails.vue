@@ -159,7 +159,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/student/${this.$route.params.id}`)
+        axios.get(`http://164.90.230.104:5000/api/admin/student/${this.$route.params.id}`)
             .then((res)=>{
                 self.user=res.data;
                 
@@ -168,7 +168,7 @@ export default {
             .catch((err)=>{
                 console.log('Error: ',err)
             })
-        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/section`)
+        axios.get(`http://164.90.230.104:5000/api/admin/section`)
             .then((res)=>{
                 for(const item of res.data.section ){
                     self.section.push({value: item.id, sectionName:item.name})
@@ -182,7 +182,7 @@ export default {
     },
     methods: {
         assignSection(){
-            axios.post(`https://creatixa-student-portal.herokuapp.com/api/admin/student-in-section/${this.selectedSection.value}/${this.$route.params.id}`,
+            axios.post(`http://164.90.230.104:5000/api/admin/student-in-section/${this.selectedSection.value}/${this.$route.params.id}`,
                     {
                         
                         headers: {
@@ -204,7 +204,7 @@ export default {
 
 
 
-                axios.post(`https://creatixa-student-portal.herokuapp.com/api/admin/student/payment/${this.$route.params.id}`, formData,
+                axios.post(`http://164.90.230.104:5000/api/admin/student/payment/${this.$route.params.id}`, formData,
                     {
                         
                         headers: {
@@ -218,7 +218,7 @@ export default {
                     });
             },
             deleteUser(){
-                axios.delete(`https://creatixa-student-portal.herokuapp.com/api/admin/student/${this.$route.params.id}`)
+                axios.delete(`http://164.90.230.104:5000/api/admin/student/${this.$route.params.id}`)
                     .then(()=>{
                         alert(`Student data has been deleted`)
                         this.$router.push('/admin/teacher')

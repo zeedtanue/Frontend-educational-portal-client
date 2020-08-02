@@ -63,7 +63,7 @@ export default {
     },
     mounted(){
         const self = this;
-        axios.get('https://creatixa-student-portal.herokuapp.com/api/admin/section')
+        axios.get('http://164.90.230.104:5000/api/admin/section')
             .then((res)=>{
                 self.sections=res.data.section;
                 self.desserts.category=res.data.section.name
@@ -80,7 +80,7 @@ export default {
                 id.push[section.id]
             }
             
-            axios.delete(`https://creatixa-student-portal.herokuapp.com/api/admin/notice/${id}`)
+            axios.delete(`http://164.90.230.104:5000/api/admin/notice/${id}`)
         },
         addToSection(){
             console.log(this.selectedSection)

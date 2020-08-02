@@ -27,7 +27,7 @@ export default {
     },
     mounted() {
         const self = this;
-        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/notice/${this.$route.params.id}`)
+        axios.get(`http://164.90.230.104:5000/api/admin/notice/${this.$route.params.id}`)
             .then((res)=>{
                 self.notice=res.data.notice;
                 

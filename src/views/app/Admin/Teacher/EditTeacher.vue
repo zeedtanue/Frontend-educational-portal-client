@@ -91,7 +91,7 @@
 		},
         mounted() {
         const self = this;
-        axios.get(`https://creatixa-student-portal.herokuapp.com/api/admin/teacher/${this.$route.params.id}`)
+        axios.get(`http://164.90.230.104:5000/api/admin/teacher/${this.$route.params.id}`)
             .then((res)=>{
                 self.user=res.data;
                 
@@ -131,7 +131,7 @@
 
 
 
-                axios.put(`https://creatixa-student-portal.herokuapp.com/api/admin/teacher/${this.$route.params.id}`, formData,
+                axios.put(`http://164.90.230.104:5000/api/admin/teacher/${this.$route.params.id}`, formData,
                     {
                         
                         headers: {

@@ -61,7 +61,7 @@
                 let formData = new FormData();
                 formData.append('subject', this.register.subject);
 
-                axios.post('https://creatixa-student-portal.herokuapp.com/api/admin/class', formData,
+                axios.post('http://164.90.230.104:5000/api/admin/class', formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data'
