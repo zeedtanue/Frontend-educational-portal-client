@@ -1,7 +1,13 @@
 <template>
     <div>
+        
         <!-- profile info with section -->
         <v-container>
+             <div >
+
+            <GoBack/>
+
+        </div>
         <v-card style="padding:30px;">
              <v-card-title class="text-center justify-center py-6">
                        <h3 class="font-weight-bold display-1 basil--text">{{book.name}}</h3>
@@ -14,7 +20,7 @@
                         width="100px"
                          style="border-radious:25" 
                          class="rounded-circle"  
-                         v-bind:src="book.coverImage" 
+                         :src="book.coverImage" 
                           
                          ></v-img>
             </div>
@@ -24,7 +30,24 @@
                      <p class="text"> Name: {{book.name}}</p>
                     
                     <p class="text">Author: {{book.author}}</p>
-                    </div>         
+                    <p class="text">Summery: {{book.summery}}</p>
+                    <p class="text">Price: {{book.price}}</p>
+
+
+                    </div>    
+                    <div align="end">
+                    <v-btn
+                    @click="downloadBook"
+                        color="light-green "
+                        dark
+                        v-bind="attrs"
+                        v-on="on"
+                        class="mx-4"
+                             >
+                      Download Book
+                     </v-btn>
+                     
+                </div>     
                 
                 </v-row>
                 <div>
@@ -62,10 +85,13 @@
 <script>
 
 
-
+import GoBack from '../component/GoBack'
 import axios from 'axios';
 export default {
     name:"User",
+    components:{
+        GoBack,
+    },
     data() {
         return {
             
@@ -86,6 +112,24 @@ export default {
             })
        
     },
+    methods:{
+        downloadBook() {
+              axios({
+                    url: this.book.bookFile,
+                    method: 'GET',
+                    responseType: 'blob',
+                }).then((response) => {
+                     var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                     var fileLink = document.createElement('a');
+   
+                     fileLink.href = fileURL;
+                     fileLink.setAttribute('download', `${this.book.name}.pdf`);
+                     document.body.appendChild(fileLink);
+   
+                     fileLink.click();
+                });
+          },
+    }
     
 }
 </script>

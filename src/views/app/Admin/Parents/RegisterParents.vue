@@ -3,8 +3,12 @@
 
 			<v-flex xs6 offset-xs3>
                 <div>
+                   
+                    <v-row>
+                    <Drawer/>
+                    <h1 style="padding-top:2px;" class="title">Add A Parent</h1>
+                </v-row>
 				<v-card >
-                    <v-text class="title">Add A Parent</v-text>
                     <div >
 					<v-card-text class="form-right">
                         <v-form>
@@ -67,11 +71,16 @@
 
 <script>
     import axios from 'axios';
+import Drawer from '../../component/Drawer/AdminDrawer'
+
     // import View from "./component/core/View";
     //import DashboardCoreView from "./component/View";
 
     export default {
         name: "RegisterStudent",
+         components:{
+        'Drawer':Drawer
+    },
         data() {
 			return {
 				register:{

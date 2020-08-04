@@ -1,6 +1,14 @@
 <template>
 <v-container>
-    <v-title class="title">Classroom</v-title>
+    <v-row justify="space-between">
+             <div >
+
+            <GoBack/>
+
+        </div>
+    <v-title  class="title">Classroom</v-title>
+
+    </v-row>
 
     <v-card>
          <v-card-title class="text-center justify-center py-6">
@@ -286,8 +294,13 @@
 </template>
 
 <script>
+import GoBack from '../component/GoBack'
+
 import axios from 'axios'
 export default {
+    components:{
+        GoBack,
+    },
      data() {
         return {
             classDetails:[],
@@ -312,8 +325,6 @@ export default {
             dialog: false,
             resourceDialog:false,
         }
-    },
-    components:{
     },
     mounted() {
         const self = this;

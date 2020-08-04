@@ -5,11 +5,11 @@
               
         <v-card>
             <div class="padding-card">
-              <h1 class="title">Assign Teacher to a class</h1>
+              <h1 class="title">Assign class to a section</h1>
             
         <v-row  justify="space-between">
             <h3>Total classess: {{classes.length}}</h3>
-            <h3>Total teachers: {{sections.length}}</h3>
+            <h3>Total sections: {{sections.length}}</h3>
          </v-row>
 
             <v-row  justify="space-between">

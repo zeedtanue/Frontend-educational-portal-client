@@ -2,6 +2,11 @@
 
     <div>
         <v-container>
+         <v-row>
+                <Drawer/>
+            <h1 class="title">Student Profile</h1> 
+</v-row>
+
             <div style="float:left">
             <Drawer/></div>
         <Profile/>
@@ -14,12 +19,14 @@
 </template>
 
 <script>
+
 import Profile from '../component/student/ProfileCard'
 import ChangePassword from '../component/student/ChangePassword'
 import StudentDrawer from '../component/Drawer/StudentDrawer'
 
 export default {
     components:{
+        
         'Profile':Profile,
         'Change-Password':ChangePassword,
         'Drawer':StudentDrawer,

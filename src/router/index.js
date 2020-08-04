@@ -167,6 +167,11 @@ Vue.use(VueRouter)
         component:()=>import('../views/app/Student/Profile')
       },
       {
+        path:'parent/profile',
+        name:'Parent-Profile',
+        component:()=>import('../views/app/Parent/Profile')
+      },
+      {
         path:'student/performance',
         name:'Student-Performance',
         component:()=>import('../views/app/Student/Performance')

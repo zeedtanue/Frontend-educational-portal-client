@@ -1,4 +1,4 @@
- <template>
+<template>
 <div>
     <a-form
                         id="components-form-demo-normal-login"
@@ -50,7 +50,7 @@
                             
                         
                             </a-form-item>
-                            <v-btn class="mb-3 register-button" success @click='logIn'>Register</v-btn>
+                            <v-btn class="mb-3 register-button" success @click='logIn'>Log In</v-btn>
                         </a-col>
                     </a-form>
 </div>
@@ -86,7 +86,7 @@
                     ).then((response)=>{
                         let token= response.data.token;
                         localStorage.setItem('token',token);
-                        this.$router.push('parent/home')
+                        this.$router.push('parent/profile')
                     }).catch((err)=>{
                         console.log(err);
                     });
@@ -109,7 +109,7 @@
     }
     .register-button
  {
-    background-image: linear-gradient(to right, #64dd17 , #77C64A );
+    background-image: linear-gradient(to right, #64dd17 , #77C64A);
     margin: 10px;
     width:360px;
     height: 50px;

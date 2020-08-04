@@ -50,7 +50,7 @@
                             
                         
                             </a-form-item>
-                            <v-btn class="mb-3 register-button" success @click='logIn'>Register</v-btn>
+                            <v-btn class="mb-3 register-button" success @click='logIn'>Log In</v-btn>
                         </a-col>
                     </a-form>
 </div>

@@ -50,7 +50,7 @@
                             
                         
                             </a-form-item>
-                            <v-btn class="mb-3 register-button" success @click='logIn'>Register</v-btn>
+                            <v-btn class="mb-3 register-button" success @click='logIn'>Log In</v-btn>
                         </a-col>
                     </a-form>
 </div>
@@ -109,7 +109,7 @@
     }
     .register-button
  {
-    background-image: linear-gradient(to right, #64dd17 , #77C64A );
+    background-image: linear-gradient(to right, #64dd17 , #77C64A);
     margin: 10px;
     width:360px;
     height: 50px;

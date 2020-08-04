@@ -2,7 +2,7 @@
         <v-container>
             <v-row>
                 <Drawer/>
-            <h1 class="title">Teacher Profile</h1> 
+            <h1 class="title">Student Profile</h1> 
 </v-row>
     <div>
        

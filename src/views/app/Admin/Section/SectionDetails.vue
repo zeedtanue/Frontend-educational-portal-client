@@ -1,6 +1,13 @@
 <template>
     <div>
+        
         <v-container>
+             <div >
+
+            <GoBack/>
+
+        </div>
+
         <!-- profile info with section -->
         <v-card>
              <v-card-title class="text-center justify-center py-6">
@@ -17,7 +24,8 @@
             <v-row justify="space-around">
             <div  v-for="item in section.class"
                 :key="item.id">
-                <router-link :to="{ name: 'ClassName', params: { id : item.id }}">
+              <router-link :to="`/class/${item._id}`">
+
                 
                 <p> {{item.subject}} </p>
                 </router-link>
@@ -66,9 +74,14 @@
 </template>
 
 <script>
+import GoBack from '../../component/GoBack'
+
 import axios from 'axios';
 export default {
     name:"User",
+    components:{
+        GoBack
+    },
     data() {
         return {
             section:[],

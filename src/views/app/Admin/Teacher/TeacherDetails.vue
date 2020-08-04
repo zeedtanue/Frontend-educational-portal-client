@@ -2,6 +2,11 @@
     <div>
         <!-- profile info with section -->
         <v-container>
+             <div >
+
+            <GoBack/>
+
+        </div>
         <v-card>
             <v-card-title class="text-center justify-center py-6">
                        <h3 class="font-weight-bold display-1 basil--text">Teacher Profile</h3>
@@ -57,7 +62,7 @@
                 
                     <div  v-for="item in user.classes" :key="item.subject">
                         <v-row justify="space-between">
-                    <router-link :to="`/admin/sectionDetails/${item._id}`">
+                    <router-link :to="`/class/${item._id}`">
                     
                     <p>{{ item.subject }}</p>
                     </router-link>
@@ -87,9 +92,14 @@
 </template>
 
 <script>
+import GoBack from '../../component/GoBack'
+
 import axios from 'axios';
 export default {
     name:"Parent",
+        components:{
+        GoBack
+    },
     data() {
         return {
             user:[]

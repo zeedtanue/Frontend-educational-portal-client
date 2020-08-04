@@ -2,6 +2,11 @@
     <div>
         <!-- profile info with section -->
         <v-container>
+             <div >
+
+            <GoBack/>
+
+        </div>
         <v-card style="padding:30px;">
              <v-card-title class="text-center justify-center py-6">
                        <h3 class="font-weight-bold display-1 basil--text">Student Profile</h3>
@@ -126,6 +131,11 @@
             
             
             </v-card>
+            <div style="padding:20px">
+                         <h2> Performance </h2>   
+
+            </div>
+            <Performance/>
            
         
            </v-container>     
@@ -140,6 +150,8 @@
 </template>
 
 <script>
+import GoBack from '../../component/GoBack'
+import Performance from '../../component/performanceTemplate'
 
 
 
@@ -156,6 +168,10 @@ export default {
             section: [],
             selectedSection: null
         }
+    },
+    components:{
+        GoBack,
+        Performance
     },
     mounted() {
         const self = this;

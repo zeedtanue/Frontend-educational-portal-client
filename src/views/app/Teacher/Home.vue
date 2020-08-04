@@ -9,9 +9,6 @@
         <Notice-Anaouncement/>
         </v-card>
         
-        <!-- timeline-->
-        <h3>Timeline</h3>
-        
         <!-- class-->
         <h3>Class List</h3>
         <Class-List/>
