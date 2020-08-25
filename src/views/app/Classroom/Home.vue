@@ -29,22 +29,30 @@
          <v-row>
          <div class="video-chat">
              <section>
-                 <iframe width="560" height="315" src="https://www.youtube.com/embed/SecROmUZGIA?start=16" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 <iframe width="560" height="280" src="https://www.youtube.com/embed/SecROmUZGIA?start=16" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
              </section>
+             <div align="end">
+            <v-btn color="light-green" dark @click="openChatRoom()"> Go to our chat room</v-btn>
+            </div>
          </div>
          <div>
          <div class="chat-box">
               
-             <H1 style="padding:20px">Comment for the class</H1>
+             <H1 style="padding:20px">Announcement for class</H1>
+
+             <div style="padding:10px" v-for="item in comments" :key="item._id">
+                 <p>{{item.comment}} -{{item.publishedAt | moment}}</p>
+
+             </div>
          </div>
          <div style="padding-left:50px">
              <v-row>
          <v-text-field
-						v-model="register.title"
+						v-model="classNotice.comment"
 						label="Type Your Text"
 						required
 						></v-text-field>
-                        <v-btn color="light-green" dark style="margin-top:20px; margin-left:10px">Send </v-btn>
+                        <v-btn @click="noticePost" color="light-green" dark style="margin-top:20px; margin-left:10px">Send </v-btn>
              </v-row>
         </div>
          
@@ -295,6 +303,7 @@
 
 <script>
 import GoBack from '../component/GoBack'
+import moment from 'moment'
 
 import axios from 'axios'
 export default {
@@ -304,6 +313,10 @@ export default {
      data() {
         return {
             classDetails:[],
+            comments:[],
+            classNotice:{
+                comment:""
+            },
             register:{
 
                     title:"",
@@ -326,12 +339,26 @@ export default {
             resourceDialog:false,
         }
     },
+    filters: {
+        moment: function (date) {
+            return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+        }
+        },
     mounted() {
         const self = this;
         axios.get(`http://46.101.188.213:5000/api/admin/class/${this.$route.params.id}`)
             .then((res)=>{
                 self.classDetails=res.data.class;
-                console.log(res.data.class)
+                console.log(res.data)
+
+            })
+            .catch((err)=>{
+                console.log('Error: ',err)
+            })
+        axios.get(`http://46.101.188.213:5000/api/teacher/class/${this.$route.params.id}/notice`)
+            .then((res)=>{
+                self.comments = res.data;
+                console.log(res.data)
 
             })
             .catch((err)=>{
@@ -339,7 +366,12 @@ export default {
             })
     },
     methods:{
+            openChatRoom:()=>{
+                window.open("https://portal-messanger.creatixamy.com/", "_blank"); 
+            },
+
             resourceRegisterIt(){
+
 
 
                 let token= localStorage.getItem('token');
@@ -365,6 +397,24 @@ export default {
                         alert( err,'FAILURE!!');
                     });
 
+            },
+            
+            noticePost(){
+                let token= localStorage.getItem('token');
+                let formData=new FormData();
+                formData.append('comment', this.classNotice.comment);
+                axios.post(`http://46.101.188.213:5000/api/teacher/class/${this.$route.params.id}/notice`, formData,
+                {
+                    headers: {
+                            'Content-Type': 'multipart/form-data',
+                            'Authorization': token
+
+                        }
+                }).then(()=>{
+                    this.$router.go(`/class/${this.$route.params.id}`)
+                }).catch((err)=>{
+                        alert( err,'FAILURE!!');
+                    });
             },
 
 			registerIt() {
@@ -392,6 +442,7 @@ export default {
                         alert( err,'FAILURE!!');
                     });
             },
+
             onPickFile(){
                 this.$refs.fileInput.click()
 
