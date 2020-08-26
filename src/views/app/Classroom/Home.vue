@@ -39,11 +39,41 @@
          <div class="chat-box">
               
              <H1 style="padding:20px">Announcement for class</H1>
+              <div style="padding-left:10px" >
+              <v-virtual-scroll
+                :items="comments"
+                :item-height="40"
+                height="280"
+                >
+                <template v-slot="{ item }">
+                     <v-list-item>
+                        <v-list-item-title>
+                            <small style="color:#a9f37f">
+                                <strong >
+                            -{{item.publishedAt | moment}}</strong> </small>
 
+                            <br>
+                            {{ item.comment }}</v-list-item-title>
+                        
+                        
+                        </v-list-item>
+                            
+                        
+                </template>
+                <v-divider></v-divider>
+              </v-virtual-scroll>
+              
+              </div>
+
+<!--
              <div style="padding:10px" v-for="item in comments" :key="item._id">
+                 
+
+
                  <p>{{item.comment}} -{{item.publishedAt | moment}}</p>
 
              </div>
+             -->
          </div>
          <div style="padding-left:50px">
              <v-row>
@@ -533,8 +563,7 @@ export default {
   border: 2px solid green;
   margin:30px;
   margin-left: 30px;
-  min-height: 350px;
-  max-height: 280px;
+  max-height: 350px;
 }
 .video-chat{
     width: 600px;
